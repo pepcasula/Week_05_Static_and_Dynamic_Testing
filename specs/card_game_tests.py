@@ -15,11 +15,5 @@ class TestCardGame(unittest.TestCase):
         self.assertEqual(9, self.easy_blackjack.highest_card())
 
     def test_card_total(self):
-        self.assertEqual("You have a total of 16", self.easy_blackjack.cards_total())
-
-    # 11th attempt (final)
-    # Fixed Concatenation Error in 'CardGame.cards_total()':
-    #  - created f-string
-    #  - into f-string, converted 'total' value to string
-    # All tests now run successfully    
+        self.assertEqual("You have a total of 16", self.easy_blackjack.cards_total()) 
 
