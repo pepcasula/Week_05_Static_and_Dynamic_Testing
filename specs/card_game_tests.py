@@ -6,14 +6,16 @@ class TestCardGame(unittest.TestCase):
     def setUp(self):
         self.card_1 = Card("spades", 7)
         self.card_2 = Card("hearts", 9)
-        self.easy_blackjack = CardGame(self.card_1.value, self.card_2.value)
+        self.cards = [self.card_1, self.card_2]
 
     def test_check_for_ace(self):
-        self.assertEqual(False, self.card_1.check_for_ace())
+        ace_check = CardGame.check_for_ace(self.card_1)
+        self.assertEqual(False, ace_check)
     
     def test_highest_card(self):
-        self.assertEqual(9, self.easy_blackjack.highest_card())
+        highest_check = CardGame.highest_card(self.cards)    
+        self.assertEqual("The highest card is 9 of hearts.", highest_check)
 
     def test_card_total(self):
-        self.assertEqual("You have a total of 16", self.easy_blackjack.cards_total()) 
-
+        total_check = CardGame.cards_total(self.cards)
+        self.assertEqual("You have a total of 16", total_check) 
